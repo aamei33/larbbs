@@ -11,17 +11,25 @@ use App\Handlers\ImageUploadHandler;
 class UsersController extends Controller
 {
     //
+    public function __construct(){
+        //未登录用户 只可以访问show
+        // 如果访问到 则跳转到登录页面
+        $this->middleware('auth',['except'=>['show']]);
+    }
+
     public function show(User $user){
         return view('users.show', compact('user'));
 
     }
 
     public function edit(User $user){
+        $this->authorize('update', $user);
         return view('users.edit',compact('user'));
     }
 
     public function update(UserRequest $request, ImageUploadHandler $uploader, User $user)
     {
+        $this->authorize('update', $user);
         $data = $request->all();
 
 
