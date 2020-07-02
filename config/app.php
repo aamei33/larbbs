@@ -67,7 +67,12 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    // liuyamei 20200702  修改时区为上海
+    //'timezone' => 'UTC',
+    'timezone' => 'Asia/Shanghai',
+
+    //yamei
+
 
     /*
     |--------------------------------------------------------------------------
@@ -80,8 +85,9 @@ return [
     |
     */
 
-    'locale' => 'en',
-
+    //liuyamei  修改默认语言为 zh-CN
+   // 'locale' => 'en',
+    'locale' => 'zh-CN',
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
