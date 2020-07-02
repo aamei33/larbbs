@@ -43,3 +43,9 @@ Route::post('email/resend', 'Auth\VerificationController@resend')->name('verific
 
 
 Route::get('/home', 'PagesController@root')->name('home');
+
+//Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
+//等同于
+Route::get('/users/{user}', 'UsersController@show')->name('users.show');
+Route::get('/users/{user}/edit', 'UsersController@edit')->name('users.edit');
+Route::patch('/users/{user}', 'UsersController@update')->name('users.update');
